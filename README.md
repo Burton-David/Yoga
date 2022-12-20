@@ -1,2 +1,13 @@
-# Yoga
-A Flask App that generates a yoga flow with breathes as duration. 
+yoga-app
+├── app.py
+├── requirements.txt
+├── templates
+│   ├── base.html
+│   ├── home.html
+│   └── routine.html
+└── static
+    ├── css
+    │   └── style.css
+    ├── img
+    └── js
+        └── script.js

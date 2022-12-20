@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+  <h2>Approximately How Long Would You Like The Yoga Routine to Last (in Minutes)?</h2>
+  <form method="post" action="{{ url_for('home') }}">
+    {{ form.csrf_token }}
+    {{ form.duration }}
+    {{ form.submit }}
+  </form>
+  {% if yoga_routine %}
+  <h2>Your Yoga Routine</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Pose</th>
+        <th>Duration (Breathes)</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for category, pose, duration in yoga_routine %}
+      <tr>
+        <td>{{ category }}</td>
+        <td>{{ pose }}</td>
+        <td>{{ duration }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% endif %}
+{% endblock %}

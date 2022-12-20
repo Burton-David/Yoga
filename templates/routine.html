@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Yoga Routine{% endblock %}
+
+{% block content %}
+  <h2>Your Yoga Routine</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Pose</th>
+        <th>Duration (Breathes)</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for category, pose, duration in yoga_routine %}
+      <tr>
+        <td>{{ category }}</td>
+        <td>{{ pose }}</td>
+        <td>{{ duration }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
